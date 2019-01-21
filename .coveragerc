@@ -1,0 +1,18 @@
+[run]
+branch = True
+
+omit =
+    */templatetags/*
+    */tests/*
+    */migrations/*
+    */admin.py
+    */apps.py
+    */__init__.py
+    */manage.py
+    */wsgi.py
+
+source =
+    */.
+
+[report]
+show_missing = True
