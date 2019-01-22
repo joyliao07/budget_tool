@@ -6,6 +6,7 @@ from django.db import models
 
 
 class TestBudgetModels(TestCase):
+    """To test model Budget."""
     def setUp(self):
         # Fail to import Factory in factories.py:
         # self.budget = BudgetFactory(
@@ -21,6 +22,7 @@ class TestBudgetModels(TestCase):
 
 
 class TestTransactionModels(TestCase):
+    """To test model Transaction."""
     def setUp(self):
         # Fail to import Factory in factories.py:
         # self.budget = BudgetFactory(
