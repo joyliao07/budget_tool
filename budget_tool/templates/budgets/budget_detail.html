@@ -1,0 +1,13 @@
+{% extends "generic/base.html" %}
+{% load tz %}
+
+{% block title %}Detail{% endblock title %}
+
+{% block content %}
+<div class="budget_detail">
+<h3> Single Transaction Detail: </h3>
+<p>Amount ${{ transactions.amount }}</p>
+<p>Description: {{ transactions.description }}</p>
+
+</div>
+{% endblock content %}

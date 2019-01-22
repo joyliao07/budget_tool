@@ -1,4 +1,4 @@
-# DJANGO_LENDER
+# BUDGET_TOOL
 
 
 Author: Joyce Liao
@@ -27,10 +27,14 @@ TO START THIS PROGRAM, THE USER NEED PYTHON 3.6.
     - Set up models.py
     - Set up html files
     - Set up entrypoint.sh
-3. Run server
+3. Create models
+    - models.py
+4. Create controller
+    - views.py
+5. Run server
     - Run docker build
     - Run docker-compose up
-4. Testing
+6. Testing
     - run django testing
 
 
@@ -43,4 +47,4 @@ TO START THIS PROGRAM, THE USER NEED PYTHON 3.6.
 
 
 
-2019-01-07 Repo is created
+2019-01-21 Repo is created
