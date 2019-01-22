@@ -4,7 +4,8 @@ set -e
 
 cd /src
 
-python3 manage.py test -v 2 && \
+coverage run --source='.' manage.py test -v 2
+coverage report
 python3 manage.py makemigrations --noinput  # flask migrate
 python3 manage.py migrate --noinput  # flask upgrade
 python3 manage.py collectstatic --noinput
