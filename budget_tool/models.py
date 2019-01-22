@@ -12,6 +12,9 @@ class Budget(models.Model):
     total_budget = models.FloatField(blank=True)
     remaining_budget = models.FloatField(blank=True)
 
+    # @property
+    # def balance(self):
+
     def __repr__(self):
         return '<Budget: {}>'.format(self.name)
 
@@ -42,3 +45,19 @@ class Transaction(models.Model):
 
     def __str__(self):
         return '{} | {}'.format(self.transaction_type, self.amount)
+
+
+@receiver(models.signals.post_save, sender=Transaction)
+def calc_budget_balance(sender, instance, **kwargs):
+    """Update budget balance."""
+    # To add/subtract the transaction amount:
+    if instance.transaction_type == 'deposit':
+        instance.budget.remaining_budget += instance.amount
+    else:
+        instance.budget.remaining_budget -= instance.amount
+
+    # To Save:
+    instance.budget.save()
+
+
+
