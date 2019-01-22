@@ -1,0 +1,19 @@
+{% extends "generic/base.html" %}
+
+{% block title %}List{% endblock title %}
+{% block content %}
+<div class="budget_list">
+{% for budget in budgets %}
+  <h3> {{ budget }} | Balance: {{budget.remaining_budget }} </h3>
+    <p> List each transaction in the Budget? </p>
+      {% for transaction in transactions %}
+
+      {% if transaction.budget == budget %}
+        <p><a href="{% url "budget_detail" id=transaction.id %}">{{ transaction.transaction_type }} | {{ transaction.amount }} | {{ transaction.description }}</a></p>
+      {% endif %}
+  {% endfor %}
+
+
+{% endfor %}
+</div>
+{% endblock content %}
