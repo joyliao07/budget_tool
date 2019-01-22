@@ -10,6 +10,8 @@ omit =
     */__init__.py
     */manage.py
     */wsgi.py
+    *budget_project/factories.py
+    *budget_project/settings.py
 
 source =
     */.
