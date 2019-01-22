@@ -5,6 +5,7 @@ from django.db import models
 
 
 class Budget(models.Model):
+    """To create model Budget."""
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='budgets')
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=180, default='Untitled Budget Name')
@@ -23,6 +24,7 @@ class Budget(models.Model):
 
 
 class Transaction(models.Model):
+    """To create model Transaction."""
     assigned_to = models.ForeignKey(User, on_delete=models.CASCADE, related_name='transactions', null=True, blank=True)
     id = models.AutoField(primary_key=True)
     budget = models.ForeignKey(Budget, on_delete=models.CASCADE, related_name='transactions')
