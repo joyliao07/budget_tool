@@ -14,6 +14,8 @@ pillow = "*"
 factory-boy = "*"
 factory = "*"
 pytest = "*"
+django-cors-headers = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.6"

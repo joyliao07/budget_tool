@@ -33,6 +33,7 @@ ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split()
 INSTALLED_APPS = [
     'budget_project',
     'budget_tool',
+    'budget_rest_app',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,9 +41,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_registration',
+    'corsheaders',
+    'rest_framework.authtoken',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -138,3 +143,18 @@ ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window
 
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+# Django REST Framework Settings
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
+
+CORS_ORIGIN_WHITELIST = tuple(
+    os.environ.get(
+        'CORS_ORIGIN_WHITELIST',
+        'http://localhost:3000/',
+    ).split()
+)

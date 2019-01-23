@@ -35,7 +35,7 @@ class BudgetCreateView(LoginRequiredMixin, CreateView):
     model = Budget
     form_class = BudgetForm
     success_url = reverse_lazy('budget_view')
-    login_url = reverse_lazy('auth_login')
+    login_url = reverse_lazy('login')
 
     def form_valid(self, form):
         """Validate form data."""
@@ -48,7 +48,7 @@ class TransactionCreateView(LoginRequiredMixin, CreateView):
     model = Transaction
     form_class = TransactionForm
     success_url = reverse_lazy('budget_view')
-    login_url = reverse_lazy('auth_login')
+    login_url = reverse_lazy('login')
 
     def form_valid(self, form):
         """Validate form data."""
