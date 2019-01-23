@@ -54,3 +54,10 @@ class TransactionCreateView(LoginRequiredMixin, CreateView):
         """Validate form data."""
         form.instance.user = self.request.user
         return super().form_valid(form)
+
+    # def call_transactionForm(self):
+    #     current_user = self.request.user.username
+    #     form_class = TransactionForm(current_user)
+    #     return form_class
+
+

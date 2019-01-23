@@ -12,9 +12,6 @@ class Budget(models.Model):
     total_budget = models.FloatField(blank=True)
     remaining_budget = models.FloatField(blank=True)
 
-    # @property
-    # def balance(self):
-
     def __repr__(self):
         return '<Budget: {}>'.format(self.name)
 
@@ -58,6 +55,3 @@ def calc_budget_balance(sender, instance, **kwargs):
 
     # To Save:
     instance.budget.save()
-
-
-

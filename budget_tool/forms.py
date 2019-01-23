@@ -1,4 +1,5 @@
 from django.forms import ModelForm
+from django.db import models
 from .models import Budget, Transaction
 
 
@@ -12,7 +13,10 @@ class TransactionForm(ModelForm):
     class Meta:
         model = Transaction
         fields = ['budget', 'transaction_type', 'amount', 'description']
-    # def __init__(self, user=None, **kwargs):
-    #     super(ExcludedDateForm, self).__init__(**kwargs)
-    #     if user:
-    #         self.fields['category'].queryset = models.Category.objects.filter(user=user)
+
+
+# class TransactionSub(models.TransactionForm):
+#     def __init__(self, *args, **kwargs):
+#         kwargs['max_length'] = 104
+#         super().__init__(*args, **kwargs)
+
