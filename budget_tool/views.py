@@ -48,16 +48,16 @@ class TransactionCreateView(LoginRequiredMixin, CreateView):
     model = Transaction
     form_class = TransactionForm
     success_url = reverse_lazy('budget_view')
-    login_url = reverse_lazy('login')
+    login_url = reverse_lazy('auth_login')
+
+    def get_form_kwargs(self):
+        """
+        """
+        kwargs = super().get_form_kwargs()
+        kwargs.update({'user': self.request.user})
+        return kwargs
 
     def form_valid(self, form):
         """Validate form data."""
         form.instance.user = self.request.user
         return super().form_valid(form)
-
-    # def call_transactionForm(self):
-    #     current_user = self.request.user.username
-    #     form_class = TransactionForm(current_user)
-    #     return form_class
-
-
