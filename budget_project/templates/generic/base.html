@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="{% static "css/skeleton.css" %}">
   <link rel="stylesheet" href="{% static "css/style.css" %}">
 
-  <title>{% block title %}{% endblock %} Books App</title>
+  <title>{% block title %}{% endblock %} Budget Tool </title>
 </head>
 <body>
   <header>
@@ -35,7 +35,7 @@
     {% if user.is_authenticated %}
     <h3>Welcome to Budget Tool, {{ user.username }}!</h3>
     {% else %}
-    <h3>Books App! Please sign up or log in.</h3>
+    <h3>Budget Tool App! Please sign up or log in.</h3>
     {% endif %}
   </header>
   <main>

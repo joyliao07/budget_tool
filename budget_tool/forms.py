@@ -14,19 +14,7 @@ class TransactionForm(ModelForm):
         model = Transaction
         fields = ['budget', 'transaction_type', 'amount', 'description']
 
-    # def __init__(self, *args, **kwargs):
-    #     super(TransactionForm, self).__init__(*args, **kwargs)
-    #     self.user = kwargs.pop('user', None)
-    #     import pdb; pdb.set_trace()
-    #     # self.user is empty; "You would need to do something clever to return a class with the user value baked in from get_form."; https://stackoverflow.com/questions/28078419/django-modeladmin-get-queryset-from-modelform?
-    #     self.fields['budget'].queryset = Transaction.objects.filter(budget__user__username=self.request.user.username)
-
-
-
-
-
-
-
-
-
-
+    def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)
+        super().__init__(*args, **kwargs)
+        self.fields['budget'].queryset = Budget.objects.filter(user__username=self.user.username)
