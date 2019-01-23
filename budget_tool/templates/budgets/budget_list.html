@@ -3,6 +3,8 @@
 {% block title %}List{% endblock title %}
 {% block content %}
 <div class="budget_list">
+<p><a href="{% url "budget_create" %}">Add New Budget</a></p>
+<p><a href="{% url "transaction_create" %}">Add New Transaction</a></p>
 {% for budget in budgets %}
   <h3> {{ budget }} | Balance: {{budget.remaining_budget }} </h3>
     <p> List each transaction in the Budget? </p>
