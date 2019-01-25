@@ -2,7 +2,6 @@ from django.test import TestCase, RequestFactory
 from django.contrib.auth.models import User
 from .models import Budget, Transaction
 from django.db import models
-# from ..budget_project.factories import UserFactory, BudgetFactory, TransactionFactory
 
 
 class TestBudgetModels(TestCase):
@@ -36,8 +35,3 @@ class TestTransactionModels(TestCase):
 
     def test_default_transaction_attrs(self):
         self.assertEqual(self.transaction.amount, 0)
-
-
-
-
-
