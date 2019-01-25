@@ -1,3 +1,4 @@
+"""This module contains class based on Factory."""
 import factory
 from django.contrib.auth.models import User
 from budget_tool.models import Budget, Transaction
