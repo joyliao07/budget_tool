@@ -1,3 +1,4 @@
+"""This module contains views for budget_tool."""
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView
 from django.urls import reverse_lazy
@@ -6,6 +7,7 @@ from .forms import BudgetForm, TransactionForm
 
 
 class BudgetListView(LoginRequiredMixin, ListView):
+    """To create budget list view."""
     template_name = 'budgets/budget_list.html'
     context_object_name = 'budgets'
     login_url = reverse_lazy('login')
@@ -20,6 +22,7 @@ class BudgetListView(LoginRequiredMixin, ListView):
 
 
 class BudgetDetailView(LoginRequiredMixin, DetailView):
+    """To create budget detail view."""
     template_name = 'budgets/budget_detail.html'
     model = Transaction
     context_object_name = 'transactions'
@@ -31,6 +34,7 @@ class BudgetDetailView(LoginRequiredMixin, DetailView):
 
 
 class BudgetCreateView(LoginRequiredMixin, CreateView):
+    """To create budget create view."""
     template_name = 'budgets/budget_create.html'
     model = Budget
     form_class = BudgetForm
@@ -44,6 +48,7 @@ class BudgetCreateView(LoginRequiredMixin, CreateView):
 
 
 class TransactionCreateView(LoginRequiredMixin, CreateView):
+    """To create transaction create view."""
     template_name = 'budgets/transaction_create.html'
     model = Transaction
     form_class = TransactionForm

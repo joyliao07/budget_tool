@@ -1,3 +1,4 @@
+"""This module contains tests for view."""
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView
 from django.test import TestCase, RequestFactory, Client
@@ -9,8 +10,8 @@ from .factories import UserFactory, BudgetFactory, TransactionFactory
 
 
 class TestBudgetViews(TestCase):
-    """
-    """
+    """To test views."""
+
     def setUp(self):
         """To set up class."""
         self.user = UserFactory()

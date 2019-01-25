@@ -1,3 +1,4 @@
+"""This module contains models for the app."""
 from django.contrib.auth.models import User
 from django.dispatch import receiver
 from django.utils import timezone

@@ -1,3 +1,4 @@
+"""This module contains tests for models."""
 from django.test import TestCase, RequestFactory
 from django.contrib.auth.models import User
 from .models import Budget, Transaction

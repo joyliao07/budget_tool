@@ -1,3 +1,4 @@
+"""This module defines class UserFactory, BudgetFactory and TransactionFactory."""
 import factory
 from django.contrib.auth.models import User
 from budget_tool.models import Budget, Transaction

@@ -1,8 +1,10 @@
+"""This module contains tests on budget_rest_app."""
 from django.test import TestCase, RequestFactory, Client
 from .factories import UserFactory, BudgetFactory, TransactionFactory
 
 
 class TestUserAPI(TestCase):
+    """To test API endpoints and methods."""
 
     def setUp(self):
         self.user = UserFactory()

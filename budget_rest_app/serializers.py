@@ -1,3 +1,4 @@
+"""This module contains serializer to be used for api views."""
 from django.contrib.auth.models import User
 from budget_tool.models import Budget, Transaction
 from rest_framework import serializers

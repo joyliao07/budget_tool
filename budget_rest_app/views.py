@@ -1,3 +1,4 @@
+"""This module contains views based on rest framework."""
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import generics
@@ -12,12 +13,14 @@ from .serializers import (
 
 
 class RegisterApiView(generics.CreateAPIView):
+    """To set up register api view."""
     permission_classes = ''
     authentication_classes = (TokenAuthentication,)
     serializer_class = UserSerializer
 
 
 class UserApiView(generics.RetrieveAPIView):
+    """To set up user api view."""
     permission_classes = ''
     serializer_class = UserSerializer
 
@@ -26,6 +29,7 @@ class UserApiView(generics.RetrieveAPIView):
 
 
 class BudgetListApiView(generics.ListCreateAPIView):
+    """To set up budget list api view."""
     permission_classes = (IsAuthenticated,)
     authentication_classes = (TokenAuthentication,)
     serializer_class = BudgetSerializer
@@ -39,6 +43,7 @@ class BudgetListApiView(generics.ListCreateAPIView):
 
 
 class BudgetDetailApiView(generics.RetrieveAPIView):
+    """To set up budget detail api view."""
     permission_classes = (IsAuthenticated,)
     authentication_classes = (TokenAuthentication,)
     serializer_class = BudgetSerializer
@@ -49,6 +54,7 @@ class BudgetDetailApiView(generics.RetrieveAPIView):
 
 
 class TransactionListApiView(generics.ListCreateAPIView):
+    """To set up transaction list api view."""
     permission_classes = (IsAuthenticated,)
     authentication_classes = (TokenAuthentication,)
     serializer_class = TransactionSerializer
@@ -59,6 +65,7 @@ class TransactionListApiView(generics.ListCreateAPIView):
 
 
 class TransactionDetailApiView(generics.RetrieveAPIView):
+    """To set up transaction detail api view."""
     permission_classes = (IsAuthenticated,)
     authentication_classes = (TokenAuthentication,)
     serializer_class = TransactionSerializer
