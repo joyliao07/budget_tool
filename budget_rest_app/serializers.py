@@ -26,7 +26,10 @@ class UserSerializer(serializers.ModelSerializer):
 
 class BudgetSerializer(serializers.HyperlinkedModelSerializer):
     """To serialize the fields in Budget model."""
+    # owner is the user name in database:
     owner = serializers.ReadOnlyField(source='user.username')
+
+    # user will be something like "http://localhost:8000/api/v1/user/1":
     user = serializers.HyperlinkedRelatedField(view_name='user-detail', read_only=True)
 
     class Meta:
@@ -36,7 +39,7 @@ class BudgetSerializer(serializers.HyperlinkedModelSerializer):
 
 class TransactionSerializer(serializers.HyperlinkedModelSerializer):
     """To serialize the fields in Transaction model."""
-    budget = serializers.HyperlinkedRelatedField(view_name='budget-list-api', read_only=True)
+    budget = serializers.HyperlinkedRelatedField(view_name='budget-detail-api', read_only=True)
 
     class Meta:
         model = Transaction
